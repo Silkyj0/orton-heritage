@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#f3f1c4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <!-- simple heritage / Queenslander pavilion mark -->
+  <path d="M8 28 L32 12 L56 28" />
+  <line x1="12" y1="28" x2="52" y2="28" />
+  <rect x="14" y="28" width="36" height="18" />
+  <line x1="14" y1="34" x2="50" y2="34" />
+  <line x1="20" y1="34" x2="20" y2="46" />
+  <line x1="44" y1="34" x2="44" y2="46" />
+  <line x1="10" y1="46" x2="54" y2="46" />
+  <line x1="12" y1="46" x2="12" y2="52" />
+  <line x1="52" y1="46" x2="52" y2="52" />
+</svg>
