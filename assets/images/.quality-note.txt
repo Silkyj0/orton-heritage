@@ -1,1 +1,0 @@
-High-resolution website imagery is stored in this folder. Images are kept at practical web dimensions to avoid soft rendering on desktop displays.
