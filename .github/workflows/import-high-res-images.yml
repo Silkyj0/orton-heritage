@@ -1,0 +1,44 @@
+name: Import high-resolution website images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-high-res-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download original Orton Heritage photographs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/images
+          curl -L --fail --retry 3 'https://static.wixstatic.com/media/254ec5_587d23e947734698ad0f7c3b70a4c99c~mv2.jpg' -o assets/images/place-1.jpg
+          curl -L --fail --retry 3 'https://static.wixstatic.com/media/254ec5_487e9143d6694163ac497c4cfe70fba3~mv2.jpg' -o assets/images/place-2.jpg
+          curl -L --fail --retry 3 'https://static.wixstatic.com/media/254ec5_5c1f4be6a44f48dbae6941b9d4bf7cc9~mv2.jpg' -o assets/images/place-3.jpg
+          curl -L --fail --retry 3 'https://static.wixstatic.com/media/254ec5_ee5fa7e14d1c45748c40651418c49f09~mv2.jpg' -o assets/images/place-4.jpg
+          test -s assets/images/place-1.jpg
+          test -s assets/images/place-2.jpg
+          test -s assets/images/place-3.jpg
+          test -s assets/images/place-4.jpg
+
+      - name: Commit imported images
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/images/place-1.jpg assets/images/place-2.jpg assets/images/place-3.jpg assets/images/place-4.jpg
+          if git diff --cached --quiet; then
+            echo 'No image changes to commit.'
+          else
+            git commit -m 'Import high-resolution website photography'
+            git push
+          fi
