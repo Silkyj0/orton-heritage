@@ -1,0 +1,1 @@
+Website images are prepared at practical web resolutions. Source photography is retained separately at higher resolution.
