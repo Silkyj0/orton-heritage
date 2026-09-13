@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ortonheritage.com/sitemap.xml
