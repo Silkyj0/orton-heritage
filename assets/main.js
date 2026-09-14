@@ -1,3 +1,15 @@
+const GA_MEASUREMENT_ID = 'G-15XTJH6YD2';
+
+window.dataLayer = window.dataLayer || [];
+window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+window.gtag('js', new Date());
+window.gtag('config', GA_MEASUREMENT_ID);
+
+const gaScript = document.createElement('script');
+gaScript.async = true;
+gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+document.head.appendChild(gaScript);
+
 document.documentElement.classList.add('js');
 
 const header = document.querySelector('.site-header');
@@ -72,6 +84,12 @@ if (form) {
 
       form.reset();
       if (status) status.textContent = 'Thanks — your enquiry has been sent. We’ll be in touch shortly.';
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', {
+          event_category: 'contact',
+          event_label: 'website_enquiry'
+        });
+      }
     } catch (error) {
       if (status) status.textContent = 'Something went wrong. Please email patrick@ortonheritage.com instead.';
     } finally {
