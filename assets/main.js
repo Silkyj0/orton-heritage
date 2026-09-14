@@ -53,6 +53,15 @@ document.querySelectorAll('[data-year]').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
+document.querySelectorAll('.footer-nav').forEach((footerNav) => {
+  if (!footerNav.querySelector('a[href="privacy.html"]')) {
+    const privacyLink = document.createElement('a');
+    privacyLink.href = 'privacy.html';
+    privacyLink.textContent = 'Privacy';
+    footerNav.appendChild(privacyLink);
+  }
+});
+
 const form = document.querySelector('[data-contact-form]');
 if (form) {
   const status = form.querySelector('.form-status');
