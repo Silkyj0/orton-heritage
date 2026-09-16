@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Orton Heritage">
+  <rect width="64" height="64" rx="8" fill="#403F2C"/>
+  <g fill="none" stroke="#f3f1c4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 29 L32 13 L54 29"/>
+    <line x1="15" y1="29" x2="49" y2="29"/>
+    <line x1="18" y1="29" x2="18" y2="48"/>
+    <line x1="46" y1="29" x2="46" y2="48"/>
+    <line x1="18" y1="40" x2="46" y2="40"/>
+    <line x1="14" y1="49" x2="50" y2="49"/>
+    <line x1="18" y1="49" x2="18" y2="54"/>
+    <line x1="46" y1="49" x2="46" y2="54"/>
+  </g>
+</svg>
